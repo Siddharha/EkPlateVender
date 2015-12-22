@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/llMain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/llBasicInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvBasicInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Basic Info"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Location"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTiming"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvTiming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Timing"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFoodSold"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvFoodSold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Food sold"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llGenInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvGenInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="General Info"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llItemPurchase"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvItemPurchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Item Purchase"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPicVideo"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvPicVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Pic &amp; video"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAboutVendor"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvAboutVendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="About vendor"
+                android:textSize="15sp"
+                android:textIsSelectable="false"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

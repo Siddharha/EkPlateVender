@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="primary_theme_color" type="color">#FFBB00</item>
+    <item name="primary_dark_theme_color" type="color">#E6A800</item>
+    <item name="panel_theme_color" type="color">#ffffff</item>
+    <item name="selected_tab_color" type="color">#FFC9C6</item>
+  </resources>

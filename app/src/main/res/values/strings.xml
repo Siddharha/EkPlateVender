@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EkPlateVendor</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="API_KEY">AIzaSyCS1BJFrc2Wdp2VyW9d67-bheN8BHePzwM</string>
+</resources>

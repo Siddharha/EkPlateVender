@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="#e19600">
+
+        <LinearLayout
+            android:id="@+id/llLogout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="#ffd000"
+            android:gravity="center"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginRight="0.5dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/log_out"
+                    android:gravity="center|bottom"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Logout"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffd000"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginRight="0.5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="TODAYS TARGET"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTarget"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0 VENDOR"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffd000"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginRight="0.5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CAPTURED TODAY"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCaptured"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0 VENDOR"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffd000"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginRight="0.5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="PENDING WORK"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPending"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0 VENDOR"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFAQ"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:background="#ffd000"
+            android:gravity="center"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginRight="0.5dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|bottom"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/question"
+                    android:gravity="center|bottom"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="FAQ"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

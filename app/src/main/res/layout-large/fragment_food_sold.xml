@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="false"
+        android:id="@+id/slFoodSold">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:layout_width="fill_parent"
+                            android:layout_height="45dp"
+                            android:layout_marginRight="5dp"
+                            android:padding="5dp"
+                            android:background="@drawable/shape_panel"
+                            android:singleLine="true"
+                            android:hint="FOOD ITEM NAME"
+                            android:textSize="10sp"
+                            android:imeOptions="actionNext"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:id="@+id/etFoodName"
+                            android:background="@drawable/shape_panel"
+                            android:layout_marginRight="5dp"
+                            android:paddingLeft="5dp"
+                            android:gravity="center|left"
+                            android:hint="FOOD ITEM NAME *"
+                            android:textColor="#000000"
+                            android:textSize="10sp"
+                            android:imeOptions="actionNext"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/etFoodPrice"
+                                android:layout_width="fill_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginRight="5dp"
+                                android:padding="5dp"
+                                android:background="@drawable/shape_panel"
+                                android:singleLine="true"
+                                android:inputType="number"
+                                android:hint="PRICE *"
+                                android:textSize="10sp"
+                                android:imeOptions="actionDone"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnMenuPlus"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_shape_green"
+                            android:layout_marginRight="5dp"
+                            android:textColor="#ffffff"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:text="+" />
+
+                        <Button
+                            android:id="@+id/btnMenuMinus"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_shape_gray"
+                            android:textColor="#ffffff"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:text="-" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rvAddMinusLayout"
+                    android:scrollbars="none"
+                    android:isScrollContainer="false"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginBottom="30dp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_shape_gray"
+                    android:text="BACK"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/button_shape_green"
+                    android:text="NEXT"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

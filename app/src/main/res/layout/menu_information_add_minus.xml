@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/llMain"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:background="@drawable/shape_panel"
+                android:singleLine="true"
+                android:hint="FOOD ITEM NAME"
+                android:textSize="10sp"
+                android:imeOptions="actionNext"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/etFoodAddMinus"
+                android:background="@drawable/shape_panel"
+                android:layout_marginRight="5dp"
+                android:paddingLeft="5dp"
+                android:gravity="center|left"
+                android:hint="FOOD ITEM NAME"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                android:imeOptions="actionNext"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/etPriceAddMinus"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:background="@drawable/shape_panel"
+                android:singleLine="true"
+                android:inputType="number"
+                android:hint="PRICE"
+                android:textSize="10sp"
+                android:imeOptions="actionDone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:layout_marginLeft="5dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnAddMenuLayout"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_shape_green"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:text="+" />
+
+            <Button
+                android:id="@+id/btnMinusMenuLayout"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_shape_gray"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:text="-" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

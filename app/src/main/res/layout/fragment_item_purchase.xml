@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp">
+
+                                <EditText
+                                    android:id="@+id/etFragItemPurchased"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="10sp"
+                                    android:gravity="center"
+                                    android:hint="ITEM PURCHASED"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionNext"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="0.9"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp">
+
+                                <EditText
+                                    android:id="@+id/etFragItemDays"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:inputType="number"
+                                    android:gravity="center"
+                                    android:layout_weight="1"
+                                    android:hint="DAYS"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionNext"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp">
+
+                                <EditText
+                                    android:id="@+id/etFragItemQty"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:inputType="number"
+                                    android:gravity="center"
+                                    android:hint="QTY"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionNext"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp" >
+
+                                <EditText
+                                    android:id="@+id/etFragItemUnit"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:hint="UNIT"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionNext"
+                                    android:visibility="gone" />
+
+                                <Spinner
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/sqQnt"
+                                    android:background="@drawable/shape_panel"
+                                    android:spinnerMode="dropdown"
+                                    android:visibility="visible"
+                                    android:layout_gravity="center"
+                                    android:gravity="center" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp">
+
+                                <EditText
+                                    android:id="@+id/etFragItemCost"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="10sp"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:hint="TOTAL COST IN RS"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionNext"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="0.9"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/editText2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:inputType="number"
+                                    android:gravity="center"
+                                    android:layout_weight="1"
+                                    android:hint="DAYS"
+                                    android:padding="5dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/editText3"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:inputType="number"
+                                    android:gravity="center"
+                                    android:hint="QTY"
+                                    android:padding="5dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="0.9"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp">
+
+                                <EditText
+                                    android:id="@+id/etFragItemCostPerUnit"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="12sp"
+                                    android:gravity="center"
+                                    android:hint="COST"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionDone"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp" >
+
+                                <EditText
+                                    android:id="@+id/etFragItemPerUnit"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/shape_panel"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textSize="12sp"
+                                    android:hint="UNIT"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:imeOptions="actionDone"
+                                    android:visibility="gone" />
+
+                                <Spinner
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/sqQntPer"
+                                    android:background="@drawable/shape_panel"
+                                    android:spinnerMode="dropdown"
+                                    android:layout_gravity="center"
+                                    android:gravity="center" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginRight="5dp" >
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_gravity="bottom"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/btnFragItemPlus"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/button_shape_green"
+                            android:textSize="15sp"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:text="+" />
+
+                        <Button
+                            android:id="@+id/btnFragItemMinus"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/button_shape_gray"
+                            android:textSize="15sp"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold"
+                            android:text="-" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvAddMinusLayout"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:scrollbars="none"
+                android:scrollIndicators="none"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="30dp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_shape_gray"
+                    android:text="BACK"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/button_shape_green"
+                    android:text="NEXT"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

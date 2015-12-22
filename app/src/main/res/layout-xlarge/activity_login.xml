@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_theme_color"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_marginTop="48dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/etEmailId"
+            android:layout_width="590dip"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:background="@drawable/login_et_bg"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:visibility="gone"
+            android:id="@+id/etMobile"
+            android:layout_marginTop="13dp"
+            android:layout_width="590dip"
+            android:layout_height="50dp"
+            android:hint="Mobile"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:background="@drawable/login_et_bg"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:maxLength="10"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_marginTop="13dp"
+            android:layout_width="590dip"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:background="@drawable/login_et_bg"
+            android:paddingLeft="10dp"
+            android:inputType="textPassword"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="286dp"
+        android:layout_height="60dp"
+        android:background="@drawable/login_btn_bg"
+        android:text="LOGIN"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:textSize="29dp"/>
+
+</LinearLayout>
+

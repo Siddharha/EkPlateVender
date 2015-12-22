@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="false"
+        android:id="@+id/svLocations">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1">
+
+                    <Spinner
+                        android:visibility="gone"
+                        android:id="@+id/spinLocality"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="3" />
+
+                    <EditText
+                        android:id="@+id/etVendorAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:padding="5dp"
+                        android:background="@drawable/shape_panel"
+                        android:singleLine="true"
+                        android:textSize="10sp"
+                        android:hint="VENDOR ADDRESS"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:layout_weight="1"
+                        android:textColor="#97000000"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAddressCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bg_textbox"
+                        android:layout_weight="1"
+                        android:paddingLeft="4dp"
+                        android:textSize="14sp"
+                        android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Area"
+                            android:layout_weight="1"
+                            android:textColor="#97000000"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="5dp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAddressArea"
+                            android:layout_width="fill_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bg_textbox"
+                            android:layout_weight="1"
+                            android:paddingLeft="4dp"
+                            android:textSize="14sp"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VEndor Address"
+                        android:layout_weight="1"
+                        android:textColor="#97000000"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etAddressAddress"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bg_textbox_two"
+                        android:layout_weight="1"
+                        android:paddingLeft="4dp"
+                        android:textSize="14sp"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hygiene"
+                            android:layout_weight="1"
+                            android:textColor="#97000000"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAddressHygiene"
+                            android:layout_width="fill_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bg_textbox_two"
+                            android:layout_weight="1"
+                            android:paddingLeft="4dp"
+                            android:textSize="14sp"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Taste Score"
+                            android:layout_weight="1"
+                            android:textColor="#97000000"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAddressTasteScore"
+                            android:layout_width="fill_parent"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bg_textbox_two"
+                            android:layout_weight="1"
+                            android:paddingLeft="4dp"
+                            android:textSize="14sp"
+                            android:singleLine="true"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lat"
+                                android:layout_weight="1"
+                                android:textColor="#97000000"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="10dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/etAddressLat"
+                                android:layout_width="fill_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/bg_textbox_two"
+                                android:layout_weight="1"
+                                android:paddingLeft="4dp"
+                                android:textSize="14sp"
+                                android:singleLine="true"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Long"
+                                android:layout_weight="1"
+                                android:textColor="#97000000"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="10dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/etAddressLong"
+                                android:layout_width="fill_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/bg_textbox_two"
+                                android:layout_weight="1"
+                                android:paddingLeft="4dp"
+                                android:textSize="14sp"
+                                android:singleLine="true"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                android:baselineAligned="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#545454" />
+
+                    <View
+                        android:id="@+id/customView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgMarker"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/marker"
+                        android:scaleType="fitXY"
+                        android:cropToPadding="true"
+                        android:maxHeight="50dp"
+                        android:maxWidth="50dp"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lock Location"
+                        android:id="@+id/tvLockLocation"
+                        android:background="@drawable/map_lock_location_shape"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        android:padding="5dp"
+                        android:layout_above="@+id/imgMarker"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentTop="false" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="5dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="20dp">
+
+                        <EditText
+                            android:id="@+id/etLatitude"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                            android:background="@drawable/shape_panel"
+                            android:singleLine="true"
+                            android:textSize="10sp"
+                            android:hint="LATITUDE"
+                            android:inputType="numberDecimal"
+                            android:imeOptions="actionDone"/>
+
+                        <EditText
+                            android:id="@+id/etLongitude"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                            android:background="@drawable/shape_panel"
+                            android:singleLine="true"
+                            android:textSize="10sp"
+                            android:hint="LONGITUDE"
+                            android:inputType="numberDecimal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_weight="1.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marker Status:"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMarkerStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Click &amp; drag the marker"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_weight="1.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marker Position:"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMarkerPosition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:layout_weight="1.5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marker Matching Address:"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvMarkerAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text=""/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginBottom="30dp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_shape_gray"
+                    android:text="BACK"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/button_shape_green"
+                    android:text="NEXT"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

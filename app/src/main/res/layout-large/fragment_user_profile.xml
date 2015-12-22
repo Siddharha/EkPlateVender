@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView3" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:baselineAligned="false">
+
+                <FrameLayout
+                    android:id="@+id/flPhotoFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.50"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp">
+
+                    <com.example.bluehorsesoftkol.ekplatevendor.Utils.CircularImageView
+                        android:id="@+id/imgViewUser"
+                        android:layout_width="120dip"
+                        android:layout_height="120dip"
+                        android:src="@drawable/image_box" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="20dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="NAME:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="MOBILE NO:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:maxLength="10"
+                            android:inputType="number"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="TWITTER:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etTwitter"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="INSTAGRAM:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etInstagram"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="text"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="20dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="EMAIL:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="textEmailAddress"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="FACEBOOK:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etFacebook"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="PININTEREST:"
+                            android:layout_weight="1.8"
+                            android:gravity="center|left"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textSize="18sp"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/etPininterest"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:singleLine="true"
+                            android:padding="5dp"
+                            android:gravity="center|left"
+                            android:textSize="18sp"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="New Text"
+                            android:id="@+id/textView61"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:gravity="center" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/editText17"
+                            android:background="@drawable/shape_panel"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_weight="1"
+                android:baselineAligned="false" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/llGraph">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/chart1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.4"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="TOTAL VENDOR"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_panel_blue"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/tvTotalVendor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="O VENDOR"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="TOTAL UPLOADED"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_panel_blue"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/tvTotalUploadedVendor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="O VENDOR"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/shape_panel"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="TOTAL APPROVED"
+                                android:layout_weight="1"
+                                android:background="@drawable/shape_panel_blue"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/tvTotalApprovedVendor"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="O VENDOR"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llEditProfile"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="#aaff0000"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="EDIT PROFILE"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llSaveProfile"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="#aaff0000"
+                        android:layout_marginBottom="5dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="SAVE PROFILE"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llChangePassword"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="#aa49B956"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="CHANGE PASSWORD"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

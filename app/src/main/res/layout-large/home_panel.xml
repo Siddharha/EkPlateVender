@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/llMain">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/llProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:id="@+id/tvProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="User Profile"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:textIsSelectable="false"
+                android:singleLine="false"
+                android:layout_marginBottom="10dp" />
+
+            <FrameLayout
+                android:id="@+id/barProfile"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/selected_home_panel_bg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Supervisor Note"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <FrameLayout
+                android:id="@+id/barNote"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/selected_home_panel_bg"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAreaCovered"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:id="@+id/tvAreaCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="MapView of Area Covered"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <FrameLayout
+                android:id="@+id/barAreaCovered"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/selected_home_panel_bg" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llManagement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/selected_sidetab_bg"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center|bottom">
+
+            <TextView
+                android:id="@+id/tvManagement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Vendor Management"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <FrameLayout
+                android:id="@+id/barManagement"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/selected_home_panel_bg"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
