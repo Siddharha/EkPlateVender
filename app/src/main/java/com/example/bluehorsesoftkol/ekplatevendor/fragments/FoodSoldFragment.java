@@ -1,35 +1,44 @@
 package com.example.bluehorsesoftkol.ekplatevendor.fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.bluehorsesoftkol.ekplatevendor.R;
+import com.example.bluehorsesoftkol.ekplatevendor.Utils.ImageLoader;
 import com.example.bluehorsesoftkol.ekplatevendor.Utils.Pref;
 import com.example.bluehorsesoftkol.ekplatevendor.activity.vendor.ActivityAddVendor;
 import com.example.bluehorsesoftkol.ekplatevendor.bean.BeanVendorMenuInformationLayout;
 import com.example.bluehorsesoftkol.ekplatevendor.bean.VendorFoodSoldItem;
 import com.example.bluehorsesoftkol.ekplatevendor.dbpackage.DbAdapter;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +46,10 @@ import java.util.List;
 public class FoodSoldFragment extends Fragment {
 
     private View rootView;
+    ListView lvItems;
+    EditText edSearch;
+    Dialog dialog;
+    Bitmap bm = null;
     private EditText  etFoodPrice, etPriceAddMinus, Price_txt;
     private TextView etFoodName, etFoodAddMinus, Food_txt;
     private Button btnMenuMinus, btnMenuPlus, btnAddMenuLayout, btnMinusMenuLayout, btnBack, btnNext;
@@ -56,7 +69,9 @@ public class FoodSoldFragment extends Fragment {
     private ArrayList<String> foodImageList = new ArrayList<>();
     ArrayList<String> foodNameArray = new ArrayList<>();
     ArrayList<String> foodImageArray = new ArrayList<>();
-    private SpinnerAdapter foodAdapter;
+    private SearchableAdapter foodAdapter;
+    private ImageLoader imgLoader;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -104,12 +119,12 @@ public class FoodSoldFragment extends Fragment {
             foodImageArray.add(foodImageList.get(i).toString());
         }
 
-        foodAdapter = new SpinnerAdapter(getActivity(), R.layout.spinner_layout, foodNameArray, foodImageArray);
+        foodAdapter = new SearchableAdapter(getActivity(),foodNameArray,foodImageArray);
 
         etFoodName.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                new AlertDialog.Builder(getActivity())
+               /* new AlertDialog.Builder(getActivity())
                         .setTitle("Select Food Menu")
                         .setAdapter(foodAdapter, new DialogInterface.OnClickListener() {
 
@@ -117,13 +132,57 @@ public class FoodSoldFragment extends Fragment {
                                 etFoodName.setText(foodNameArray.get(position).toString());
                                 dialog.dismiss();
                             }
-                        }).create().show();
+                        }).create().show();*/
+
+                dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.foodlist_view_layout);
+                dialog.setTitle("Search Food");
+                dialog.setCancelable(true);
+                edSearch = (EditText) dialog.findViewById(R.id.edSearch);
+                dialogOnclickMethod();
+                lvItems = (ListView) dialog.findViewById(R.id.lvItems);
+                // foodAdapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1, items);
+                lvItems.setAdapter(foodAdapter);
+                //edSearch.setAdapter(foodAdapter);
+                dialog.show();
+                lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        etFoodName.setText(foodAdapter.filteredData.get(position));
+                        dialog.dismiss();
+                    }
+                });
             }
         });
     }
 
-    private void initialize() {
+    private void dialogOnclickMethod() {
 
+        edSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                   foodAdapter.getFilter().filter(s);
+                   //lvItems.setAdapter(foodAdapter);
+                   Log.e(">>", foodNameArray.toString());
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+
+    private void initialize() {
+        imgLoader = new ImageLoader(getActivity());
         activityAddVendor = (ActivityAddVendor) getActivity();
         db = new DbAdapter(getActivity());
         _pref = new Pref(getActivity());
@@ -141,6 +200,7 @@ public class FoodSoldFragment extends Fragment {
         addMinusLayoutAdapter = new AddMinusLayoutAdapter(list, R.layout.menu_information_add_minus);
         rvAddMinusLayout.setAdapter(addMinusLayoutAdapter);
         slFoodSold = (ScrollView)rootView.findViewById(R.id.slFoodSold);
+
     }
 
 
@@ -345,7 +405,7 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
             etFoodAddMinus.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
-                    new AlertDialog.Builder(getActivity())
+                    /*new AlertDialog.Builder(getActivity())
                             .setTitle("Select Food Menu")
                             .setAdapter(foodAdapter, new DialogInterface.OnClickListener() {
 
@@ -353,16 +413,36 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                                     etFoodAddMinus.setText(foodNameArray.get(position).toString());
                                     dialog.dismiss();
                                 }
-                            }).create().show();
+                            }).create().show();*/
+
+                    dialog = new Dialog(getActivity());
+                    dialog.setContentView(R.layout.foodlist_view_layout);
+                    dialog.setTitle("Search Food");
+                    dialog.setCancelable(true);
+                    edSearch = (EditText) dialog.findViewById(R.id.edSearch);
+                     dialogOnclickMethod();
+                    lvItems = (ListView) dialog.findViewById(R.id.lvItems);
+                    // foodAdapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1, items);
+                    lvItems.setAdapter(foodAdapter);
+                    dialog.show();
+
+                    lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            etFoodAddMinus.setText(foodAdapter.filteredData.get(position));
+                            dialog.dismiss();
+                        }
+                    });
                 }
             });
 
             }
         }
     }
-
-    public class SpinnerAdapter extends ArrayAdapter<String> {
-
+//region Spinner
+   /* public class SpinnerAdapter extends ArrayAdapter<String> implements Filterable {
+        private ItemFilter mFilter = new ItemFilter();
+        private ArrayList<String>filteredData;
         private Context ctx;
         private ArrayList<String> foodNameArray;
         private ArrayList<String> foodImageArray;
@@ -374,8 +454,9 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                               ArrayList<String> foodImageArray) {
             super(context,  R.layout.spinner_layout, R.id.spinnerTextView, foodNameArray);
             this.ctx = context;
-            this.foodNameArray = foodNameArray;
             this.foodImageArray = foodImageArray;
+            this.filteredData = foodNameArray ;
+            this.foodNameArray = foodNameArray;
 
             imageLoader = ImageLoader.getInstance();
             imageLoader.init(ImageLoaderConfiguration.createDefault(getActivity()));
@@ -387,9 +468,15 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                     .imageScaleType(ImageScaleType.EXACTLY).build();
         }
 
+
         @Override
         public View getDropDownView(int position, View convertView,ViewGroup parent) {
             return getCustomView(position, convertView, parent);
+        }
+
+        @Override
+        public Filter getFilter() {
+            return mFilter;
         }
 
         @Override
@@ -403,7 +490,8 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
             View row = inflater.inflate(R.layout.spinner_layout, parent, false);
 
             TextView textView = (TextView) row.findViewById(R.id.spinnerTextView);
-            textView.setText(foodNameArray.get(position).toString());
+           // textView.setText(foodNameArray.get(position).toString());
+            textView.setText(filteredData.get(position).toString());
 
             ImageView imageView = (ImageView)row.findViewById(R.id.spinnerImages);
             imageLoader.displayImage(foodImageArray.get(position).toString(),
@@ -413,5 +501,159 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
 
             return row;
         }
+
+        private class ItemFilter extends Filter{
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                String filterString = constraint.toString().toLowerCase();
+
+                FilterResults results = new FilterResults();
+
+                final List<String> list = foodNameArray;
+
+                int count = list.size();
+                final ArrayList<String> nlist = new ArrayList<String>(count);
+
+                String filterableString ;
+
+                for (int i = 0; i < count; i++) {
+                    filterableString = list.get(i);
+                    if (filterableString.toLowerCase().contains(filterString)) {
+                        nlist.add(filterableString);
+                    }
+                }
+
+                results.values = nlist;
+                results.count = nlist.size();
+
+                return results;
+            }
+
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                filteredData = (ArrayList<String>) results.values;
+                notifyDataSetChanged();
+            }
+
+
+        }
+    }*/
+
+    //endregion
+
+    //region FoodListview
+    public class SearchableAdapter extends BaseAdapter implements Filterable {
+
+        private List<String>imageData = null;
+        private List<String>originalData = null;
+        private List<String>filteredData = null;
+        private LayoutInflater mInflater;
+        private ItemFilter mFilter = new ItemFilter();
+
+        public SearchableAdapter(Context context ,List<String> data,List<String> img) {
+            this.imageData = img;
+            this.filteredData = data ;
+            this.originalData = data ;
+            mInflater = LayoutInflater.from(context);
+        }
+
+        public int getCount() {
+            return filteredData.size();
+        }
+
+        public Object getItem(int position) {
+            return filteredData.get(position);
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // A ViewHolder keeps references to children views to avoid unnecessary calls
+            // to findViewById() on each row.
+            ViewHolder holder;
+
+            // When convertView is not null, we can reuse it directly, there is no need
+            // to reinflate it. We only inflate a new View when the convertView supplied
+            // by ListView is null.
+            if (convertView == null) {
+                convertView = mInflater.inflate(R.layout.inflated_food_list_layout, null);
+
+                // Creates a ViewHolder and store references to the two children views
+                // we want to bind data to.
+                holder = new ViewHolder();
+                holder.text = (TextView) convertView.findViewById(R.id.txtFood);
+                holder.image = (ImageView) convertView.findViewById(R.id.imgPic);
+
+                // Bind the data efficiently with the holder.
+
+                convertView.setTag(holder);
+            } else {
+                // Get the ViewHolder back to get fast access to the TextView
+                // and the ImageView.
+                holder = (ViewHolder) convertView.getTag();
+            }
+
+            // If weren't re-ordering this you could rely on what you set last time
+            holder.text.setText(filteredData.get(position));
+           // holder.image.setImageURI(Uri.parse(imageData.get(position)));
+            holder.image.setImageBitmap(BitmapFactory.decodeFile(imageData.get(position)));
+            imgLoader.DisplayImage(imageData.get(position),holder.image);
+           // holder.image.setImageResource(R.drawable.akki_roti);
+
+            return convertView;
+        }
+
+         class ViewHolder {
+            TextView text;
+             ImageView image;
+        }
+
+        public Filter getFilter() {
+            return mFilter;
+        }
+
+        private class ItemFilter extends Filter {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                String filterString = constraint.toString().toLowerCase();
+
+                FilterResults results = new FilterResults();
+
+                final List<String> list = originalData;
+
+                int count = list.size();
+                final ArrayList<String> nlist = new ArrayList<String>(count);
+
+                String filterableString ;
+
+                for (int i = 0; i < count; i++) {
+                    filterableString = list.get(i);
+                    if (filterableString.toLowerCase().contains(filterString)) {
+                        nlist.add(filterableString);
+                    }
+                }
+
+                results.values = nlist;
+                results.count = nlist.size();
+
+                return results;
+            }
+
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                filteredData = (ArrayList<String>) results.values;
+                notifyDataSetChanged();
+            }
+
+        }
     }
+    //endregion
+
+
 }

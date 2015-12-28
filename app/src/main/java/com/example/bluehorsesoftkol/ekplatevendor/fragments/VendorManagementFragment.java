@@ -180,7 +180,7 @@ for(int i = 0;selectedVendorInfoList.size()>i;i++) {
         VendorVideoItem _vendorVideoItem = vendorVideo.get(i).get(j);
         String filePath = _vendorVideoItem.getVideo_path();
         Log.e("Videos:", filePath);
-        uploadMultipart(getContext(), filePath, "http://uat.ekplate.com/api/v1/add-vendor");
+        uploadMultipart(getContext(), filePath, "http://uat.ekplate.com/api/v1/upload-video");
     }
 }
 
