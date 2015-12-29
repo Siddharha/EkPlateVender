@@ -105,6 +105,7 @@ public class FoodSoldFragment extends Fragment {
 
 
 
+
     private void loadFoodItem() {
 
         db.open();
@@ -152,6 +153,11 @@ public class FoodSoldFragment extends Fragment {
                         dialog.dismiss();
                     }
                 });
+
+                if(!_pref.getSession("Serached_food").isEmpty()) {
+                    String foodString = _pref.getSession("Serached_food");
+                    edSearch.setText(foodString);
+                }
             }
         });
     }
@@ -176,6 +182,7 @@ public class FoodSoldFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
 
+                _pref.setSession("Serached_food",edSearch.getText().toString());
             }
         });
     }
@@ -433,6 +440,13 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                             dialog.dismiss();
                         }
                     });
+
+                    if(!_pref.getSession("Serached_food").isEmpty()) {
+
+                        String foodString = _pref.getSession("Serached_food");
+                        edSearch.setText(foodString);
+
+                    }
                 }
             });
 
@@ -644,13 +658,22 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
 
                 for (int i = 0; i < count; i++) {
                     filterableStringImg = listImg.get(i);
-                    if (filterableStringImg.toLowerCase().contains(filterString)) {
+                    if (filterableStringImg.toLowerCase().contains(filterString.replaceAll(" ","%"))) {
                         mlist.add(filterableStringImg);
                     }
                 }
 
                 Log.i("IMG:",mlist.toString());
-                filteredDataImg = mlist;
+
+                if(!mlist.isEmpty())
+                {
+                    filteredDataImg = mlist;
+                }
+                else
+                {
+                    filteredDataImg = imageData;
+                }
+
                 results.values = nlist;
                 results.count = nlist.size();
 
