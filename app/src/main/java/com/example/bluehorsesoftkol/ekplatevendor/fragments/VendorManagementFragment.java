@@ -26,6 +26,10 @@ import com.alexbbb.uploadservice.MultipartUploadRequest;
 import com.alexbbb.uploadservice.UploadNotificationConfig;
 import com.alexbbb.uploadservice.UploadService;
 import com.alexbbb.uploadservice.UploadServiceBroadcastReceiver;
+import com.android.internal.http.multipart.MultipartEntity;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.bluehorsesoftkol.ekplatevendor.BuildConfig;
 import com.example.bluehorsesoftkol.ekplatevendor.R;
 import com.example.bluehorsesoftkol.ekplatevendor.Utils.CallServiceAction;
@@ -43,6 +47,13 @@ import com.example.bluehorsesoftkol.ekplatevendor.interfaces.BackgroundActionInt
 import com.example.bluehorsesoftkol.ekplatevendor.service.GetFoodItemService;
 import com.example.bluehorsesoftkol.ekplatevendor.service.GetMonthlyGraphService;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -181,6 +192,10 @@ for(int i = 0;selectedVendorInfoList.size()>i;i++) {
         String filePath = _vendorVideoItem.getVideo_path();
         Log.e("Videos:", filePath);
         uploadMultipart(getContext(), filePath, "http://uat.ekplate.com/api/v1/upload-video");
+        //uploadReceiver.onCompleted(null, 0, "upload_video");
+       //Log.e("Recived:", uploadReceiver.onCompleted(null, 0, "upload_video"));
+
+
     }
 }
 
@@ -427,10 +442,11 @@ for(int i = 0;selectedVendorInfoList.size()>i;i++) {
             new MultipartUploadRequest(context, uploadID, serverUrlString)
                     .addFileToUpload(filePath, "your-param-name")
                     .addHeader("your-custom-header-name", "your-custom-value")
-                    .addParameter("your-param-name", "your-param-value")
+                    .addParameter("upload_video", "your-param-value")
                     .setNotificationConfig(new UploadNotificationConfig())
                     .setMaxRetries(2)
                     .startUpload();
+
         } catch (Exception exc) {
             Log.e("AndroidUploadService", exc.getMessage(), exc);
         }
@@ -478,6 +494,7 @@ for(int i = 0;selectedVendorInfoList.size()>i;i++) {
                         //such as org.json (embedded in Android) or Google's gson
                     }
                 };
+
 
     }
 }

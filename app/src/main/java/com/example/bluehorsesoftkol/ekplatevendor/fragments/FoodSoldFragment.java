@@ -169,7 +169,7 @@ public class FoodSoldFragment extends Fragment {
 
                    foodAdapter.getFilter().filter(s);
                    //lvItems.setAdapter(foodAdapter);
-                   Log.e(">>", foodNameArray.toString());
+                 //  Log.e(">>", foodNameArray.toString());
 
             }
 
@@ -549,12 +549,14 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
         private List<String>imageData = null;
         private List<String>originalData = null;
         private List<String>filteredData = null;
+        private List<String>filteredDataImg = null;
         private LayoutInflater mInflater;
         private ItemFilter mFilter = new ItemFilter();
 
         public SearchableAdapter(Context context ,List<String> data,List<String> img) {
             this.imageData = img;
             this.filteredData = data ;
+            this.filteredDataImg = img;
             this.originalData = data ;
             mInflater = LayoutInflater.from(context);
         }
@@ -600,8 +602,8 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
             // If weren't re-ordering this you could rely on what you set last time
             holder.text.setText(filteredData.get(position));
            // holder.image.setImageURI(Uri.parse(imageData.get(position)));
-            holder.image.setImageBitmap(BitmapFactory.decodeFile(imageData.get(position)));
-            imgLoader.DisplayImage(imageData.get(position),holder.image);
+            holder.image.setImageBitmap(BitmapFactory.decodeFile(filteredDataImg.get(position)));
+            imgLoader.DisplayImage(filteredDataImg.get(position),holder.image);
            // holder.image.setImageResource(R.drawable.akki_roti);
 
             return convertView;
@@ -625,11 +627,13 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                 FilterResults results = new FilterResults();
 
                 final List<String> list = originalData;
-
+                final List<String> listImg = imageData;
                 int count = list.size();
-                final ArrayList<String> nlist = new ArrayList<String>(count);
 
+                final ArrayList<String> nlist = new ArrayList<String>(count);
+                final ArrayList<String> mlist = new ArrayList<String>(count);
                 String filterableString ;
+                String filterableStringImg ;
 
                 for (int i = 0; i < count; i++) {
                     filterableString = list.get(i);
@@ -638,6 +642,15 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
                     }
                 }
 
+                for (int i = 0; i < count; i++) {
+                    filterableStringImg = listImg.get(i);
+                    if (filterableStringImg.toLowerCase().contains(filterString)) {
+                        mlist.add(filterableStringImg);
+                    }
+                }
+
+                Log.i("IMG:",mlist.toString());
+                filteredDataImg = mlist;
                 results.values = nlist;
                 results.count = nlist.size();
 
@@ -648,6 +661,8 @@ public class AddMinusLayoutAdapter extends RecyclerView.Adapter<AddMinusLayoutAd
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
                 filteredData = (ArrayList<String>) results.values;
+
+                        Log.e("Size>>",String.valueOf(results.count));
                 notifyDataSetChanged();
             }
 
